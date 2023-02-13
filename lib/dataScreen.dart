@@ -1,3 +1,4 @@
+import 'package:exam_ui/main.dart';
 import 'package:flutter/material.dart';
 
 import 'dataModel.dart';
@@ -8,18 +9,13 @@ class DataScreen extends StatefulWidget {
   @override
   State<DataScreen> createState() => _DataScreenState();
 }
-
 class _DataScreenState extends State<DataScreen> {
   TextEditingController txtid = TextEditingController();
   TextEditingController txtname = TextEditingController();
   TextEditingController txtstd = TextEditingController();
-  List name = [""];
-  List std = [""];
-  List id = [""];
 
   @override
   Widget build(BuildContext context) {
-    dataModel m1 = ModalRoute.of(context)!.settings.arguments as dataModel;
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
@@ -73,7 +69,11 @@ class _DataScreenState extends State<DataScreen> {
             ),
             ElevatedButton(
                 onPressed: () {
-                  setState(() {});
+                  dataModel d1=dataModel(id: txtid.text,name: txtname.text,std: txtstd.text);
+                  setState(() {
+                    l1[index]=d1;
+                  });
+                  Navigator.pop(context);
                 },
                 child: Text("Submit")),
           ],

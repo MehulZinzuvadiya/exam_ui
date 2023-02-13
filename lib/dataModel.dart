@@ -1,4 +1,5 @@
-class dataModel{
-  String? name,gr_id,std;
-  dataModel(this.name, this.gr_id, this.std);
+class dataModel {
+  String? id, name, std;
+
+  dataModel({this.id, this.name, this.std});
 }
