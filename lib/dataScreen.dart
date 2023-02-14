@@ -1,5 +1,6 @@
 import 'package:exam_ui/main.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'dataModel.dart';
 
@@ -9,7 +10,9 @@ class DataScreen extends StatefulWidget {
   @override
   State<DataScreen> createState() => _DataScreenState();
 }
+
 class _DataScreenState extends State<DataScreen> {
+
   TextEditingController txtid = TextEditingController();
   TextEditingController txtname = TextEditingController();
   TextEditingController txtstd = TextEditingController();
@@ -69,9 +72,10 @@ class _DataScreenState extends State<DataScreen> {
             ),
             ElevatedButton(
                 onPressed: () {
-                  dataModel d1=dataModel(id: txtid.text,name: txtname.text,std: txtstd.text);
+                  dataModel d1 = dataModel(
+                      id: txtid.text, name: txtname.text, std: txtstd.text);
                   setState(() {
-                    l1[index]=d1;
+                    l1.add(d1);
                   });
                   Navigator.pop(context);
                 },
