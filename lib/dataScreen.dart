@@ -13,9 +13,9 @@ class DataScreen extends StatefulWidget {
 
 class _DataScreenState extends State<DataScreen> {
 
-  TextEditingController txtid = TextEditingController();
-  TextEditingController txtname = TextEditingController();
-  TextEditingController txtstd = TextEditingController();
+  TextEditingController dtxtid = TextEditingController();
+  TextEditingController dtxtname = TextEditingController();
+  TextEditingController dtxtstd = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class _DataScreenState extends State<DataScreen> {
                   borderRadius: BorderRadius.circular(5),
                 ),
               ),
-              controller: txtid,
+              controller: dtxtid,
             ),
             SizedBox(
               height: 10,
@@ -53,7 +53,7 @@ class _DataScreenState extends State<DataScreen> {
                   borderRadius: BorderRadius.circular(5),
                 ),
               ),
-              controller: txtname,
+              controller: dtxtname,
             ),
             SizedBox(
               height: 10,
@@ -65,7 +65,7 @@ class _DataScreenState extends State<DataScreen> {
                   borderRadius: BorderRadius.circular(5),
                 ),
               ),
-              controller: txtstd,
+              controller: dtxtstd,
             ),
             SizedBox(
               height: 20,
@@ -73,13 +73,13 @@ class _DataScreenState extends State<DataScreen> {
             ElevatedButton(
                 onPressed: () {
                   dataModel d1 = dataModel(
-                      id: txtid.text, name: txtname.text, std: txtstd.text);
+                      id: dtxtid.text, name: dtxtname.text, std: dtxtstd.text);
                   setState(() {
                     l1.add(d1);
                   });
                   Navigator.pop(context);
                 },
-                child: Text("Submit")),
+                child: Text("Add")),
           ],
         ),
       ),
